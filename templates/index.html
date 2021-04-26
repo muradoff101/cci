@@ -1,0 +1,530 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+
+    <div class="wrapper m-auto">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for slider in sliders %}
+                    {% if forloop.first %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"
+                            class="active"></li>
+                    {% else %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"></li>
+                    {% endif %}
+
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner m-auto">
+                {% if sliders %}
+                    {% for slider in sliders %}
+                        {% if slider.ordering == 1 %}
+                            <div class="carousel-item active">
+                        {% else %}
+                            <div class="carousel-item">
+                        {% endif %}
+                    <img src="
+                                {% if LANGUAGE_CODE == 'ru' %}
+                                    {{ slider.image_ru.url }}
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    {{ slider.image_en.url }}
+                                {% elif LANGUAGE_CODE == 'tk' %}
+                                    {{ slider.image_tk.url }}
+                                {% endif %}
+                        " class="d-block w-100" style="height:revert;" alt="...">
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+
+                </div>
+                <a class="carousel-control-prev m-auto" href="#carouselExampleIndicators" role="button"
+                   data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+                <a class="carousel-control-next m-auto" href="#carouselExampleIndicators" role="button"
+                   data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+            <!-- /.container -->
+        </div>
+
+
+        <section class="news m-auto">
+            <div class="news-main">
+                <h1>{% trans 'news' %}</h1>
+
+                <a href="{% url 'news_page_link' %}">
+                    <p> {% trans 'show_all' %}</p>
+                </a>
+            </div>
+
+        </section>
+
+        <section class="main-photo" style="background-color: #f5f6fb;padding: 25px 0;">
+            <div class="m-photo">
+                <div class="container ">
+                    <div class="row">
+                        {% if news %}
+                            {% for new in news %}
+                                <div class="col-md-4 col-xl-4 m1-photo text-center">
+                                    <div class="scale">
+                                        <a href="{% url 'news_detail_page_link' new.pk %}">
+                                            <div>
+                                                <img src="{{ new.image.url }}"
+                                                     class="scale img-fluid" alt="">
+                                            </div>
+                                            <p>
+                                                {#                                                {{ new.title_tk|truncatechars:50|safe }}#}
+                                                {% if LANGUAGE_CODE == 'ru' %}
+                                                    {{ new.title_ru|truncatechars:50|safe }}
+                                                {% elif LANGUAGE_CODE == 'en' %}
+                                                    {{ new.title_en|truncatechars:50|safe }}
+                                                {% elif LANGUAGE_CODE == 'tk' %}
+                                                    {{ new.title_tk|truncatechars:50|safe }}
+                                                {% endif %}
+                                            </p>
+                                            <span>{{ new.date|date:"d.m.Y" }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </section>
+
+
+        <section class="news m-auto">
+            <div class="news-main">
+                <h1>{% trans 'news_tpp' %}</h1>
+
+                <a href="{% url 'news_page_link' %}">
+                    <p> {% trans 'show_all' %}</p>
+                </a>
+            </div>
+
+        </section>
+
+        <section class="main-photo">
+            <div class="m-photo">
+                <div class="container ">
+                    <div class="row">
+                        {% if news %}
+                            {% for new in tpp_news %}
+                                <div class="col-md-4 col-xl-4 m1-photo text-center">
+                                    <div class="scale">
+                                        <a href="{% url 'news_detail_page_link' new.pk %}">
+                                            <div>
+                                                <img src="{{ new.image.url }}"
+                                                     class="scale img-fluid" alt="">
+                                            </div>
+                                            <p>
+                                                {#                                                {{ new.title_tk|truncatechars:50|safe }}#}
+                                                {% if LANGUAGE_CODE == 'ru' %}
+                                                    {{ new.title_ru|truncatechars:50|safe }}
+                                                {% elif LANGUAGE_CODE == 'en' %}
+                                                    {{ new.title_en|truncatechars:50|safe }}
+                                                {% elif LANGUAGE_CODE == 'tk' %}
+                                                    {{ new.title_tk|truncatechars:50|safe }}
+                                                {% endif %}
+                                            </p>
+                                            <span>{{ new.date|date:"d.m.Y" }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </section>
+
+
+        
+
+                {% comment %} <section class="blocks ">
+                    <div class="b2 m-auto">
+                        <div class="banner ">
+                            <h1>{% trans 'exhib_list' %}</h1>
+                        </div>
+                    </div> {% endcomment %}
+        {##}
+        {##}
+        {#            {% if exhibitions %}#}
+        {#                {% for exhibition in exhibitions %}#}
+        {#                    <div class="b3 m-auto">#}
+        {#                        <div class="adv ">#}
+        {#                            <div class="container">#}
+        {#                                <div class="row">#}
+        {#                                    <div class="col-lg-2 col-sm-2 s1 ">#}
+        {#                                        <img src="{{ exhibition.main_image.url }}" alt="">#}
+        {#                                    </div>#}
+        {#                                    <!-- /.col-lg-2 -->#}
+        {#                                    <div class="col-lg-5 col-sm-7  s2">#}
+        {#                                        <a href="#">#}
+        {#                                            <h3>#}
+        {#                                                {% if LANGUAGE_CODE == 'ru' %}#}
+        {#                                                    {{ exhibition.title_ru }}#}
+        {#                                                {% elif LANGUAGE_CODE == 'en' %}#}
+        {#                                                    {{ exhibition.title_en }}#}
+        {#                                                {% elif LANGUAGE_CODE == 'tk' %}#}
+        {#                                                    {{ exhibition.title_tk }}#}
+        {#                                                {% endif %}#}
+        {#                                            </h3>#}
+        {#                                            {% if new.virtual == True %}#}
+        {#                                                <button type="button"#}
+        {#                                                        class="btn btn-primary butt">{% trans 'wirtual' %}</button>#}
+        {#                                            {% endif %}#}
+        {#                                        </a>#}
+        {#                                        <p class="p1">#}
+        {#                                            {% if LANGUAGE_CODE == 'ru' %}#}
+        {#                                                {{ exhibition.desc_ru|safe }}#}
+        {#                                            {% elif LANGUAGE_CODE == 'en' %}#}
+        {#                                                {{ exhibition.desc_en|safe }}#}
+        {#                                            {% elif LANGUAGE_CODE == 'tk' %}#}
+        {#                                                {{ exhibition.desc_tk|safe }}#}
+        {#                                            {% endif %}#}
+        {#                                        </p>#}
+        {##}
+        {#                                        <p class="p2">{% trans 'installer' %}</p>#}
+        {##}
+        {#                                        <p class="p3">#}
+        {#                                            {% if LANGUAGE_CODE == 'ru' %}#}
+        {#                                                {{ exhibition.installer_ru }}#}
+        {#                                            {% elif LANGUAGE_CODE == 'en' %}#}
+        {#                                                {{ exhibition.installer_en }}#}
+        {#                                            {% elif LANGUAGE_CODE == 'tk' %}#}
+        {#                                                {{ exhibition.installer_tk }}#}
+        {#                                            {% endif %}#}
+        {#                                        </p>#}
+        {#                                    </div>#}
+        {#                                    <!-- /.col-lg-6 -->#}
+        {##}
+        {#                                    <div class="col-lg-3 offset-lg-2 col-sm-3 s3">#}
+        {#                                        <a href="#">#}
+        {#                                            <h5>{{ exhibition.from_date|date:"d.m.Y" }}#}
+        {#                                                - {{ exhibition.to_date|date:"d.m.Y" }} </h5>#}
+        {##}
+        {#                                            <!-- <p><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Kalendara bellemek</p> -->#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                    <!-- /.col-lg-1 -->#}
+        {##}
+        {##}
+        {#                                </div>#}
+        {#                                <!-- /.row -->#}
+        {#                            </div>#}
+        {#                            <!-- /.container -->#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                {% endfor %}#}
+        {#            {% endif %}#}
+        {##}
+        {##}
+        {##}
+        {##}
+        {#            <!-- /.adv  /.banner -->#}
+        {#            <div class="all text-center">#}
+        {#                <a href="{% url 'exhibitions_page_link' %}" type="button"#}
+        {#                   class="btn btn-primary">{% trans 'show_all_exhib' %}</a>#}
+        {#            </div>#}
+        {#        </section>#}
+        <!-- /.blocks -->
+
+
+        <div class="banner m-auto text-center">
+                <img src="
+                        {% if LANGUAGE_CODE == 'ru' %}
+                            {{ banner.image_ru.url }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ banner.image_en.url }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ banner.image_tk.url }}
+                        {% endif %}
+                " alt="">
+        </div> 
+        <!-- /.banner -->
+
+        {#        <section class="vr m-auto mb-3">#}
+        {#            <h2 class="m-auto">{% trans 'wirtual_exhib' %}</h2>#}
+        {##}
+        {#            <div class="vr-car m-auto">#}
+        {#                <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">#}
+        {#                    <ol class="carousel-indicators">#}
+        {#                        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>#}
+        {#                        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>#}
+        {#                        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>#}
+        {#                        <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>#}
+        {#                        <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>#}
+        {#                    </ol>#}
+        {#                    <div class="carousel-inner">#}
+        {##}
+        {#                        {% if virtimages %}#}
+        {#                            {% for image in virtimages %}#}
+        {#                                {% if image.ordering == 1 %}#}
+        {#                                    <div class="carousel-item active">#}
+        {#                                {% else %}#}
+        {#                                    <div class="carousel-item">#}
+        {#                                {% endif %}#}
+        {#                            <img src="{{ image.image.url }}" style="max-width: 1024px; margin: 0 auto;"#}
+        {#                                 class="d-block w-100" alt="...">#}
+        {#                            </div>#}
+        {#                            {% endfor %}#}
+        {#                        {% endif %}#}
+        {##}
+        {##}
+        {#                        </div>#}
+        {#                        <a class="carousel-control-prev m-auto" href="#carouselExampleIndicators1" role="button"#}
+        {#                           data-slide="prev">#}
+        {#                            <span class="fa fa-chevron-left"></span>#}
+        {#                        </a>#}
+        {#                        <a class="carousel-control-next m-auto" href="#carouselExampleIndicators1" role="button"#}
+        {#                           data-slide="next">#}
+        {#                            <span class="fa fa-chevron-right"></span>#}
+        {#                        </a>#}
+        {#                    </div>#}
+        {##}
+        {#                </div>#}
+        {#                <!-- /.vr-car -->#}
+        {#            </div>#}
+        {#        </section>#}
+        <!-- /.vr -->
+
+        <br>
+
+        {#        <section class="services m-auto">#}
+        {#            <div class="servis">#}
+        {#                <div class="m-auto" style="max-width: 1280px; width:100%;">#}
+        {#                    <h2>{% trans 'services' %}</h2>#}
+        {#                </div>#}
+        {##}
+        {#                <div class="main-serv m-auto">#}
+        {#                    <div class="serv">#}
+        {#                        <div class="container">#}
+        {#                            <div class="row">#}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/vir.png' %}" class="paper" alt="">#}
+        {#                                            {% trans 'wirtual_exhib' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/expo.png' %}" alt="">#}
+        {#                                            {% trans 'education_conf' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {##}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/info.png' %}" alt="">#}
+        {#                                            {% trans 'information' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {##}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/paper.png' %}" class="paper" alt="">#}
+        {#                                            {% trans 'law_services' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {##}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/global.png' %}" alt="">#}
+        {#                                            {% trans 'foreign_economik' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {##}
+        {#                                <div class="col-md-6 col-sm-12 serv2 ">#}
+        {#                                    <div class="ms">#}
+        {#                                        <a href="#">#}
+        {#                                            <img src="{% static 'img/book.png' %}" alt="">#}
+        {#                                            {% trans 'working_edication' %}#}
+        {#                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>#}
+        {#                                        </a>#}
+        {#                                    </div>#}
+        {#                                </div>#}
+        {#                                <!-- /.col-lg-6 -->#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                    <!-- /.serv -->#}
+        {#                </div>#}
+        {#                <!-- /.main-serv -->#}
+        {#            </div>#}
+        {#            <!-- /.servis -->#}
+        {##}
+        {#            <div class="tm m-auto ">#}
+        {#                <div class="m-auto ">#}
+        {#                    <div class="container">#}
+        {#                        <div class="row">#}
+        {#                            <div class="col-md-3 mx-auto my-auto tm1 text-center">#}
+        {#                                <img src="{{ quote.image.url }}" alt="">#}
+        {#                            </div>#}
+        {#                            <!-- /.col-md-4 -->#}
+        {##}
+        {#                            <div class="col-md-7 mx-auto tm2">#}
+        {#                                <h4>#}
+        {#                                    {% if LANGUAGE_CODE == 'ru' %}#}
+        {#                                        {{ quote.title_ru }}#}
+        {#                                    {% elif LANGUAGE_CODE == 'en' %}#}
+        {#                                        {{ quote.title_en }}#}
+        {#                                    {% elif LANGUAGE_CODE == 'tk' %}#}
+        {#                                        {{ quote.title_tk }}#}
+        {#                                    {% endif %}#}
+        {#                                </h4>#}
+        {#                                <p>#}
+        {#                                    {% if LANGUAGE_CODE == 'ru' %}#}
+        {#                                        {{ quote.text_ru|safe }}#}
+        {#                                    {% elif LANGUAGE_CODE == 'en' %}#}
+        {#                                        {{ quote.text_en|safe }}#}
+        {#                                    {% elif LANGUAGE_CODE == 'tk' %}#}
+        {#                                        {{ quote.text_tk|safe }}#}
+        {#                                    {% endif %}#}
+        {#                                </p>#}
+        {#                            </div>#}
+        {#                            <!-- /.col-md-8 -->#}
+        {#                        </div>#}
+        {#                        <!-- /.row -->#}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#                <!-- /.container -->#}
+        {#            </div>#}
+        {#            <!-- /.tm -->#}
+        {#        </section>#}
+        <!-- /.service -->
+
+
+        <style>
+            .slick-slider {
+                margin: 30px auto 50px;
+            }
+        </style>
+
+
+        <div class="elasti-car m-auto">
+            <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+                <div class="rolls m-auto">
+                    <div class="news-main ">
+                        <a href="{% url 'foreign_exhibitions_page_link' %}">
+                            <h1>{% trans 'gallery' %}</h1>
+                            {#                            <p>{% trans 'show_all' %}</p>#}
+                        </a>
+                    </div>
+
+                    <!-- /.container -->
+                </div>
+                <br>
+
+                <div class="container gal-images">
+                    <div id="galimages" class="row owl-carousel"
+                         style="margin:0; position:relative;">
+
+                        {% if gallery %}
+                            {% for gal in gallery %}
+                                {% comment %} <div class=" news-ph  text-center"> {% endcomment %}
+
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
+                                       class="image_link">
+                                        {% comment %} <div> {% endcomment %}
+                                            <img src=" {{ gal.image.url }}" class="rolls1 img-fluid" alt="">
+                                        {% comment %} </div> {% endcomment %}
+
+                                    </a>
+                                {% comment %} </div> {% endcomment %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <!-- col-md-6 -->
+                    </div>
+                    <!--  /.row -->
+                </div>
+                <!-- /.rolls -->
+            </div>
+        </div>
+        <!-- /.elasti   -->
+
+        <!-- <section class="footer-cont m-auto">
+            <div class="footer-main ">
+
+            </div>
+        </section> -->
+
+
+        <section class="">
+
+            <div class="main m-auto">
+                <h2>{% trans 'partners' %}</h2>
+            </div>
+            <div id="partners" class="container owl-carousel">
+                {% for partner in partners %}
+                    <div class="row" style="margin:0">
+
+                        <div class="cub">
+                            <div class="partner" style="background-color: #fff;!important;height: 130px">
+
+                                <div>
+                                    <img src="{{ partner.image.url }}" alt="">
+                                    <style>
+                                        .partner div img {
+                                            display: flex !important;
+                                            align-items: center;
+                                            justify-content: center;
+
+                                            width: 100% !important;
+                                            padding: .5rem 0px;
+                                            margin-left: 2.1rem;
+                                        }
+
+                                    </style>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <!-- /.col-lg-2 -->
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+{% endblock content %}

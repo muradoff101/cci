@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+<section class="news1 m-auto">
+    <div class="news-main1 m-auto">
+        <a href="{% url 'main_page_link' %}" class="to_main_page">{% trans 'main_page' %}</a>
+        <h1>{% trans 'exhib_list' %}</h1>
+    </div>
+</section>
+
+<section class="blocks " style="background: none!important;">
+
+
+    {% if exhibitions %}
+    {% for exhibition in exhibitions %}
+    <div class="b3 m-auto">
+        <div class="adv ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-sm-5 align-middle">
+                        <img src="{% if exhibition.main_image %}{{exhibition.main_image.url}}{% endif %}" alt=""
+                            style="width: 100%;" class="align-middle">
+                    </div>
+                    <!-- /.col-lg-2 -->
+                    <div class="col-lg-5 col-sm-7  s2">
+                        <a href="#" style="cursor:auto;">
+                            <h3>
+                                {% if LANGUAGE_CODE == 'ru' %}
+                                {{ exhibition.title_ru }}
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                {{ exhibition.title_en }}
+                                {% elif LANGUAGE_CODE == 'tk' %}
+                                {{ exhibition.title_tk }}
+                                {% endif %}
+                            </h3>
+                            {% if new.virtual == True %}
+                            <button type="button" class="btn btn-primary butt">{% trans 'wirtual' %}</button>
+                            {% endif %}
+                        </a>
+                        <p class="p1">
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ exhibition.desc_ru|safe }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ exhibition.desc_en|safe }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ exhibition.desc_tk|safe }}
+                            {% endif %}
+                        </p>
+
+                        {% comment %} <p class="p2">{% trans 'installer' %}</p>
+
+                        <p class="p3">
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ exhibition.installer_ru }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ exhibition.installer_en }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ exhibition.installer_tk }}
+                            {% endif %}
+                        </p> {% endcomment %}
+                    </div>
+                    <!-- /.col-lg-6 -->
+
+                    <div class="col-lg-3 offset-lg-2 col-sm-3 s3">
+                        <a href="#" style="cursor:auto;">
+                            <h5>{{ exhibition.from_date|date:"d.m.Y"|slice:"3:" }}
+                            </h5>
+
+                            <!-- <p><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Kalendara bellemek</p> -->
+                        </a>
+                    </div>
+                    <!-- /.col-lg-1 -->
+
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    <!-- /.adv  /.banner -->
+
+</section>
+
+
+
+{% endblock content %}

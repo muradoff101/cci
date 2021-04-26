@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 17:51-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:28
+msgid "Habarlashmak"
+msgstr "Habarlaşmak"
+
+#: templates/base.html:33 templates/base.html:210
+msgid "About"
+msgstr "Biz barada"
+
+#: templates/base.html:34 templates/base.html:211
+msgid "Press"
+msgstr "Metbugat"
+
+#: templates/base.html:35 templates/base.html:212
+msgid "Faq"
+msgstr "Sorag-jogap"
+
+#: templates/base.html:36 templates/base.html:213
+msgid "Contacts"
+msgstr "Habarlaşmak"
+
+#: templates/base.html:57 templates/base.html:206
+msgid "tpp"
+msgstr "Türkmenistanyň<br>Söwda-senagat edarasy"
+
+#: templates/base.html:79
+msgid "membership"
+msgstr "Agzalylyk"
+#msgstr "TSSE-niň agzalygy"
+
+#: templates/base.html:81 templates/base.html:82
+msgid "membership_benefit"
+msgstr "Agzalygyň peýdalygy"
+
+#: templates/base.html:88
+msgid "business_info"
+msgstr "Işewürlik maglumat"
+
+#: templates/base.html:90
+msgid "tenders"
+msgstr "Bäsleşikler"
+
+#: templates/base.html:91
+msgid "tm_producer_commer_offer"
+msgstr "Türkmenistanly önüm öndürijileriň söwda teklipleri"
+
+#: templates/base.html:92
+msgid "forign_produc_commer_offer"
+msgstr "Daşary ýurtly hyzmatdaşlaryň söwda teklipleri"
+
+#: templates/base.html:98
+msgid "invetsment_activity"
+msgstr "Maýa goýum işi"
+
+#: templates/base.html:100
+msgid "invetsment_projects"
+msgstr "Maýa goýum taslamalar"
+
+#: templates/base.html:101
+msgid "question_invetstm_applicant"
+msgstr "Maýa goýujylaryň sowalnamasy"
+
+#: templates/base.html:102
+msgid "investor_quest"
+msgstr "Maýa goýumdarlaryň sowalnamasy"
+
+#: templates/base.html:108
+msgid "exhibitions"
+msgstr "Sergiler"
+
+#: templates/base.html:110
+msgid "tm_exhibitions"
+msgstr "Türkmenistandaky sergiler"
+
+#: templates/base.html:111
+msgid "abroad_exhibitions"
+msgstr "Daşary ýurtdaky sergiler"
+
+#: templates/base.html:112
+msgid "conferences"
+msgstr "Maslahatlar"
+
+#: templates/base.html:119
+msgid "cci_enterprises"
+msgstr "Kärhanalarymyz"
+#msgstr "TSSE-niň kärhanalary"
+
+#: templates/base.html:121
+msgid "bn_tpp"
+msgstr "Balkan welaýat SSE-sy"
+
+#: templates/base.html:122
+msgid "dz_tpp"
+msgstr "Daşoguz welaýat SSE-sy"
+
+#: templates/base.html:123
+msgid "lb_tpp"
+msgstr "Lebap welaýat SSE-sy"
+
+#: templates/base.html:124
+msgid "mr_tpp"
+msgstr "Mary welaýat SSE-sy"
+
+#: templates/base.html:125
+msgid "turkmenekspertiza"
+msgstr "Türkmenekspertiza"
+
+#: templates/base.html:126
+msgid "turkmenbashiekspertiza"
+msgstr "Türkmenbaşyekspertiza"
+
+#: templates/base.html:127
+msgid "torg_dom"
+msgstr "Söwda öýi"
+
+#: templates/base.html:128
+msgid "turkmenterjime"
+msgstr "Türkmenterjime"
+
+#: templates/base.html:232
+msgid "year"
+msgstr "ýyl"
+
+#: templates/base.html:232
+msgid "all_rights"
+msgstr "Ähli hukuklar goralan"
+
+#: templates/benefits.html:9 templates/exhibition_list.html:10
+#: templates/tenders_list.html:10
+msgid "main_page"
+msgstr "Baş sahypa"
+
+#: templates/benefits.html:10
+msgid "cci_membership"
+msgstr ""
+
+#: templates/benefits.html:19
+msgid "benefits"
+msgstr "Artykmaçlyklar"
+
+#: templates/benefits.html:41 templates/exhibition_list.html:83
+#: templates/index.html:405 templates/tenders_list.html:78
+msgid "be_member"
+msgstr "Agza boluň!"
+
+#: templates/benefits.html:42 templates/exhibition_list.html:84
+#: templates/index.html:406 templates/tenders_list.html:79
+msgid "send_all_news_to_mail"
+msgstr "Ähli täzelikleri poçtaňyza ugradarys!"
+
+#: templates/benefits.html:50 templates/exhibition_list.html:92
+#: templates/index.html:414 templates/tenders_list.html:87
+msgid "your_email"
+msgstr "Siziň elektron poçtanyňyz"
+
+#: templates/benefits.html:53 templates/exhibition_list.html:95
+#: templates/index.html:416 templates/tenders_list.html:90
+msgid "subscribe"
+msgstr "Ýazylmak"
+
+#: templates/exhibition_list.html:11 templates/index.html:88
+msgid "exhib_list"
+msgstr "Sergileriň sanawy"
+
+#: templates/exhibition_list.html:32 templates/index.html:107
+msgid "wirtual"
+msgstr "Wirtual"
+
+#: templates/exhibition_list.html:38 templates/index.html:113
+#: templates/tenders_list.html:33
+msgid "installer"
+msgstr "Gurnaýjy"
+
+#: templates/index.html:47
+msgid "news"
+msgstr "Habarlar"
+
+#: templates/index.html:50 templates/index.html:329
+msgid "show_all"
+msgstr "Ählisini görkez"
+
+#: templates/index.html:144
+msgid "show_all_exhib"
+msgstr "Ähli sergileriň sanawy"
+
+#: templates/index.html:156 templates/index.html:216
+msgid "wirtual_exhib"
+msgstr "Wirtual sergi"
+
+#: templates/index.html:205
+msgid "services"
+msgstr "Hyzmatlar"
+
+#: templates/index.html:226
+msgid "education_conf"
+msgstr "Sergi we ylmy maslahat"
+
+#: templates/index.html:237
+msgid "information"
+msgstr "Maglumat"
+
+#: templates/index.html:248
+msgid "law_services"
+msgstr "Hukuk hyzmatlary"
+
+#: templates/index.html:259
+msgid "foreign_economik"
+msgstr "Daşary ykdysady işjeňlik"
+
+#: templates/index.html:270
+msgid "working_edication"
+msgstr "Işewürlik maglumaty"
+
+#: templates/index.html:326
+msgid "gallery"
+msgstr "Galereýa"
+
+#: templates/index.html:373
+msgid "partners"
+msgstr "Hyzmatdaşlar"
+
+#: templates/tenders_list.html:11
+msgid "tender_list"
+msgstr "Tender"
+
+msgid "tpp_line"
+msgstr "TÜRKMENISTANYŇ SÖWDA-SENAGAT EDARASY"
+
+msgid "last_news"
+msgstr "SOŇKY HABARLAR"
+
+msgid "membership_joining"
+msgstr "Agzalyga girmek"
+
+msgid "become_a_member"
+msgstr "Nädip Türkmenistanyň SSE agzasy bolmaly?"
+
+msgid "address"
+msgstr "Salgysy"
+
+msgid "phone"
+msgstr "Telefon"
+
+msgid "fax"
+msgstr "Faks"
+
+msgid "email"
+msgstr "Elektron poçta"
+
+msgid "website"
+msgstr "Web sahypa"
+
+msgid "questions"
+msgstr "Soraglar"
+
+msgid "answers"
+msgstr "Jogaplar"
+
+msgid "partners_reestr"
+msgstr "TSSE-nyň yhtybarly işewür hyzmatdaşlary"
+
+msgid "phone_min"
+msgstr "Tel.:"
+
+msgid "download_applicant"
+msgstr "Anketany ýükle"
+
+msgid "parcipant_events"
+msgstr "Çärä gatnaşyjylar üçin"
+
+msgid "select_lang"
+msgstr "Dil saýlaň"
+
+msgid "addresses"
+msgstr "Ýüzlenme"
+
+msgid "about_activity"
+msgstr "TSSE-nyň işi barada"
+
+msgid "news_tpp"
+msgstr "TSSE-nyň täzelikleri"

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <a href="{% url 'main_page_link' %}" class="to_main_page">{% trans 'main_page' %}</a>
+            <h1>{% trans 'about_activity' %}</h1>
+        </div>
+    </section>
+
+    <section class="last-news">
+        <div class="lnews m-auto">
+            <h2 class="mb-4 mt-4">{% trans 'tpp_line' %}</h2>
+        </div>
+    </section>
+
+    <section class="tsse">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 tpp">
+                    <img src="{{ info.0.main_image.url }}" alt="" class="mb-4">
+                    <p>
+
+                        {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.0.about_ru|safe }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.0.about_en|safe }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.0.about_tk|safe }}
+                        {% endif %}
+                    </p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+{#    <section class="wystawka">#}
+{#        <div class="wyst m-auto">#}
+{#            <h1 class="wysth">выставочно-конгрессные возможности</h1>#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{##}
+{#                    <div class="col-xl-3 col-md-6 w1 text-center">#}
+{#                        <p class="p2">Около</p>#}
+{#                        <h1><span class="gr">30</span> тыс. </h1>#}
+{#                        <p>#}
+{#                            компании более чем <br>#}
+{#                            из 100 стран мира#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="col-xl-3 col-md-6 w1 text-center">#}
+{#                        <p class="p2">Более</p>#}
+{#                        <h1><span class="gr">1000</span></h1>#}
+{#                        <p>#}
+{#                            конгрессных <br>#}
+{#                            мероприиятии#}
+{#                        </p>#}
+{#                    </div>#}
+{##}
+{#                    <div class="col-xl-3 col-md-6 w1 text-center">#}
+{#                        <p class="p2">Около</p>#}
+{#                        <h1><span class="gr">100</span></h1>#}
+{#                        <p>#}
+{#                            международных <br>#}
+{#                            выставок#}
+{#                        </p>#}
+{#                    </div>#}
+{##}
+{#                    <div class="col-xl-3 col-md-6 w1 text-center">#}
+{#                        <p class="p2">Более</p>#}
+{#                        <h1><span class="gr">165</span> тыс.м<sup><small>2</small></sup></h1>#}
+{#                        <p>#}
+{#                            Компании более чем <br>#}
+{#                            из 100 стран мира#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- /.row -->#}
+{#            </div>#}
+{#            <!-- /.container -->#}
+{#        </div>#}
+{##}
+{#    </section>#}
+
+    <section class="about-text">
+        <div class="abt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 abt1">
+                        <img src="{{ info.0.first_image.url }}" class="i1" alt="">
+                        <img src="{{ info.0.second_image.url }}" alt="">
+
+                    </div>
+                    <div class="col-lg-6 abt2">
+                        <p>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                                {{ info.0.desc_ru|safe }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                                {{ info.0.desc_en|safe }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                                {{ info.0.desc_tk|safe }}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+    </section>
+
+
+
+
+{% endblock content %}

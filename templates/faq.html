@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <p>{% trans 'main_page' %}</p>
+            <h1>{% trans 'Faq' %}</h1>
+        </div>
+    </section>
+
+    <section class="question">
+        <div class="quest m-auto">
+            <div class="container">
+                <div class="row">
+
+                    <script>
+
+                        function openCity(evt, cityName) {
+                            // Declare all variables
+                            var i, tabcontent, tablinks;
+
+                            // Get all elements with class="tabcontent" and hide them
+                            tabcontent = document.getElementsByClassName("tabcontent");
+                            for (i = 0; i < tabcontent.length; i++) {
+                                tabcontent[i].style.display = "none";
+                            }
+
+                            // Get all elements with class="tablinks" and remove the class "active"
+                            tablinks = document.getElementsByClassName("tablinks");
+                            for (i = 0; i < tablinks.length; i++) {
+                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                            }
+
+                            // Show the current tab, and add an "active" class to the link that opened the tab
+                            document.getElementById(cityName).style.display = "block";
+                            evt.currentTarget.className += " active";
+                        }
+                    </script>
+
+
+                    <div class="col-lg-4 quest1 col-md-4">
+                        <h1>{% trans 'questions' %}</h1>
+                        <div class="tab">
+                            {% for item in info %}
+                                {% if forloop.first %}
+                                    <button class="tablinks active"
+                                            onclick="openCity(event, 'id{{ item.pk }}')">{{ item.question_tm }}</button>
+                                {% else %}
+                                    <button class="tablinks"
+                                            onclick="openCity(event, 'id{{ item.pk }}')">{{ item.question_tm }}</button>
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 quest2">
+                        <h1>{% trans 'answers' %}</h1>
+
+                        {% for item in info %}
+                            {% if forloop.first %}
+                                <div id="id{{ item.pk }}" class="tabcontent">
+                                {#                                    <h3>London</h3>#}
+
+                            {% else %}
+                                <div id="id{{ item.pk }}" class="tabcontent" style="display: none">
+                            {% endif %}
+                        <p>{{ item.answer_tm|safe }}</p>
+                        </div>
+                        {% endfor %}
+                        </div>
+                        <!-- /.col-lg-5 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.quest -->
+    </section>
+    <!-- /.question -->
+
+{% endblock content %}

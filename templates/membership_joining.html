@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <p>{% trans 'main_page' %}</p>
+            <h1>{% trans 'membership' %}</h1>
+        </div>
+    </section>
+
+    <section class="question" style="background: #fff!important; height: auto;">
+    
+        <div class="quest m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 quest2 " style="height: auto;">
+                        <h1 style="margin-left: 0; margin-right: 0; font-size: 2rem">{% trans 'become_a_member' %}
+                            <a href="
+                                            {% if LANGUAGE_CODE == 'ru' %}
+                                                {{ benefits.0.anketa_ru.url }}
+                                            {% elif LANGUAGE_CODE == 'en' %}
+                                                {{ benefits.0.anketa_en.url }}
+                                            {% elif LANGUAGE_CODE == 'tk' %}
+                                                {{ benefits.0.anketa_tk.url }}
+                                            {% endif %}
+                                            "><img src="{% static 'img/word.png' %}" alt="" width="30px"></a>
+                        </h1>
+        
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        {{ benefits.0.desc_ru|safe }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                        {{ benefits.0.desc_en|safe }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                        {{ benefits.0.desc_tk|safe }}
+                        {% endif %}
+        
+                        <!-- /.col-lg-5 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+        
+            </div>
+            <!-- /.quest -->
+       </div>
+       <!-- outer -->
+    </section>
+    <!-- /.question -->
+{% endblock content %}

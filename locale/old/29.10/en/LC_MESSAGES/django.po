@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-26 15:02-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:27
+msgid "Habarlashmak"
+msgstr ""
+
+#: templates/base.html:32
+msgid "About"
+msgstr ""
+
+#: templates/base.html:33
+msgid "Press"
+msgstr ""
+
+#: templates/base.html:34
+msgid "Faq"
+msgstr ""
+
+#: templates/base.html:35
+msgid "Contacts"
+msgstr ""
+
+#: templates/index.html:46
+msgid "news"
+msgstr ""
+
+#: templates/index.html:49 templates/index.html:327
+msgid "show_all"
+msgstr ""
+
+#: templates/index.html:87
+msgid "exhib_list"
+msgstr ""
+
+#: templates/index.html:106
+msgid "wirtual"
+msgstr ""
+
+#: templates/index.html:112
+msgid "installer"
+msgstr ""
+
+#: templates/index.html:143
+msgid "show_all_exhib"
+msgstr ""
+
+#: templates/index.html:155 templates/index.html:214
+msgid "wirtual_exhib"
+msgstr ""
+
+#: templates/index.html:203
+msgid "services"
+msgstr ""
+
+#: templates/index.html:224
+msgid "education_conf"
+msgstr ""
+
+#: templates/index.html:235
+msgid "information"
+msgstr ""
+
+#: templates/index.html:246
+msgid "law_services"
+msgstr ""
+
+#: templates/index.html:257
+msgid "foreign_economik"
+msgstr ""
+
+#: templates/index.html:268
+msgid "working_edication"
+msgstr ""
+
+#: templates/index.html:324
+msgid "gallery"
+msgstr ""
+
+#: templates/index.html:403
+msgid "be_member"
+msgstr ""
+
+#: templates/index.html:404
+msgid "send_all_news_to_mail"
+msgstr ""
+
+#: templates/index.html:414
+msgid "subscribe"
+msgstr ""

@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 17:51-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/base.html:28
+msgid "Habarlashmak"
+msgstr "To contact"
+
+#: templates/base.html:33 templates/base.html:210
+msgid "About"
+msgstr "About us"
+
+#: templates/base.html:34 templates/base.html:211
+msgid "Press"
+msgstr "Press"
+
+#: templates/base.html:35 templates/base.html:212
+msgid "Faq"
+msgstr "FAQ"
+
+#: templates/base.html:36 templates/base.html:213
+msgid "Contacts"
+msgstr "Contacts"
+
+#: templates/base.html:57 templates/base.html:206
+msgid "tpp"
+msgstr "Chamber of Commerce and <br>Industry of Turkmenistan"
+
+#: templates/base.html:79
+msgid "membership"
+msgstr "Membership"
+#msgstr "CCI membership"
+
+#: templates/base.html:81 templates/base.html:82
+msgid "membership_benefit"
+msgstr "Membership benefits"
+
+#: templates/base.html:88
+msgid "business_info"
+msgstr "Business info"
+
+#: templates/base.html:90
+msgid "tenders"
+msgstr "Tenders"
+
+#: templates/base.html:91
+msgid "tm_producer_commer_offer"
+msgstr "Commercial offers of manufacturers of Turkmenistan"
+
+#: templates/base.html:92
+msgid "forign_produc_commer_offer"
+msgstr "Commercial offers of foreign partners"
+
+#: templates/base.html:98
+msgid "invetsment_activity"
+msgstr "Investment activity"
+
+#: templates/base.html:100
+msgid "invetsment_projects"
+msgstr "Investment projects"
+
+#: templates/base.html:101
+msgid "question_invetstm_applicant"
+msgstr "Application form"
+
+#: templates/base.html:102
+msgid "investor_quest"
+msgstr "Investor Questionnaire"
+
+#: templates/base.html:108
+msgid "exhibitions"
+msgstr "Exhibitions"
+
+#: templates/base.html:110
+msgid "tm_exhibitions"
+msgstr "Exhibitions in Turkmenistan"
+
+#: templates/base.html:111
+msgid "abroad_exhibitions"
+msgstr "Exhibitions abroad"
+
+#: templates/base.html:112
+msgid "conferences"
+msgstr "Conferences"
+
+#: templates/base.html:119
+msgid "cci_enterprises"
+msgstr "Enterprises"
+
+#: templates/base.html:121
+msgid "bn_tpp"
+msgstr "CCI of Balkan region"
+
+#: templates/base.html:122
+msgid "dz_tpp"
+msgstr "CCI of Dashoguz region"
+
+#: templates/base.html:123
+msgid "lb_tpp"
+msgstr "CCI of Lebap region"
+
+#: templates/base.html:124
+msgid "mr_tpp"
+msgstr "CCI of Lebap region"
+
+#: templates/base.html:125
+msgid "turkmenekspertiza"
+msgstr "Turkmenekspertiza"
+
+#: templates/base.html:126
+msgid "turkmenbashiekspertiza"
+msgstr "Turkmenbashiekspertiza"
+
+#: templates/base.html:127
+msgid "torg_dom"
+msgstr "Torgovyi dom"
+
+#: templates/base.html:128
+msgid "turkmenterjime"
+msgstr "Turkmenterjime"
+
+#: templates/base.html:232
+msgid "year"
+msgstr "year"
+
+#: templates/base.html:232
+msgid "all_rights"
+msgstr "All rights reserved"
+
+#: templates/benefits.html:9 templates/exhibition_list.html:10
+#: templates/tenders_list.html:10
+msgid "main_page"
+msgstr "Home page"
+
+#: templates/benefits.html:10
+msgid "cci_membership"
+msgstr "Membership benefits"
+
+#: templates/benefits.html:19
+msgid "benefits"
+msgstr "Benefits"
+
+#: templates/benefits.html:41 templates/exhibition_list.html:83
+#: templates/index.html:405 templates/tenders_list.html:78
+msgid "be_member"
+msgstr "Subscribe"
+
+#: templates/benefits.html:42 templates/exhibition_list.html:84
+#: templates/index.html:406 templates/tenders_list.html:79
+msgid "send_all_news_to_mail"
+msgstr "Be informed of all events"
+
+#: templates/benefits.html:50 templates/exhibition_list.html:92
+#: templates/index.html:414 templates/tenders_list.html:87
+msgid "your_email"
+msgstr "Your e-mail"
+
+#: templates/benefits.html:53 templates/exhibition_list.html:95
+#: templates/index.html:416 templates/tenders_list.html:90
+msgid "subscribe"
+msgstr "Subscribe"
+
+#: templates/exhibition_list.html:11 templates/index.html:88
+msgid "exhib_list"
+msgstr "Exhibitions list"
+
+#: templates/exhibition_list.html:32 templates/index.html:107
+msgid "wirtual"
+msgstr "Virtual"
+
+#: templates/exhibition_list.html:38 templates/index.html:113
+#: templates/tenders_list.html:33
+msgid "installer"
+msgstr "Organizers"
+
+#: templates/index.html:47
+msgid "news"
+msgstr "News"
+
+#: templates/index.html:50 templates/index.html:329
+msgid "show_all"
+msgstr "Show all"
+
+#: templates/index.html:144
+msgid "show_all_exhib"
+msgstr "Show all exhibitions"
+
+#: templates/index.html:156 templates/index.html:216
+msgid "wirtual_exhib"
+msgstr "Virtual exhibition"
+
+#: templates/index.html:205
+msgid "services"
+msgstr "Services"
+
+#: templates/index.html:226
+msgid "education_conf"
+msgstr "Exhibition and scientific conference"
+
+#: templates/index.html:237
+msgid "information"
+msgstr "Information"
+
+#: templates/index.html:248
+msgid "law_services"
+msgstr "Legal services"
+
+#: templates/index.html:259
+msgid "foreign_economik"
+msgstr "Foreign economic relations"
+
+#: templates/index.html:270
+msgid "working_edication"
+msgstr "Training activities"
+
+#: templates/index.html:326
+msgid "gallery"
+msgstr "Gallery"
+
+#: templates/index.html:373
+msgid "partners"
+msgstr "Partners"
+
+#: templates/tenders_list.html:11
+msgid "tender_list"
+msgstr "Tenders"
+
+msgid "tpp_line"
+msgstr "Chamber of Commerce and Industry of Turkmenistan"
+
+msgid "last_news"
+msgstr "Last news"
+
+msgid "membership_joining"
+msgstr "Membership joining"
+
+msgid "become_a_member"
+msgstr "How to enter into cooperation with the CCI of Turkmenistan?"
+
+msgid "address"
+msgstr "Address"
+
+msgid "phone"
+msgstr "Phone"
+
+msgid "fax"
+msgstr "Fax"
+
+msgid "email"
+msgstr "E-mail"
+
+msgid "website"
+msgstr "Web site"
+
+msgid "questions"
+msgstr "Questions"
+
+msgid "answers"
+msgstr "Answers"
+
+msgid "partners_reestr"
+msgstr "Reliable partnes registry of CCI of Turkmenistan"
+
+msgid "phone_min"
+msgstr "Phone:"
+
+msgid "download_applicant"
+msgstr "Download application"
+
+msgid "parcipant_events"
+msgstr "To the participants of the events"
+
+msgid "select_lang"
+msgstr "Select language"
+
+msgid "addresses"
+msgstr "Address"
+
+msgid "about_activity"
+msgstr "About CCT activity"
+
+msgid "news_tpp"
+msgstr "CCIT news"

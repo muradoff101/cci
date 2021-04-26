@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <p>{% trans 'main_page' %}</p>
+            <h1>
+                {% trans 'cci_enterprises' %}
+            </h1>
+        </div>
+    </section>
+
+    <section class="question" style="background: #fff!important;">
+        <div class="quest m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 quest2">
+                        <h3 style="margin-left: 0; margin-right: 0; margin-top: 20px;margin-bottom: 20px">
+                            {% if LANGUAGE_CODE == 'ru' %}
+                                {{ info.name_ru }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                                {{ info.name_en }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                                {{ info.name_tk }}
+                            {% endif %}
+                        </h3>
+                        {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.desc_ru|safe }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.desc_en|safe }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.desc_tk|safe }}
+                        {% endif %}
+
+                        <span><b>{% trans 'address' %}</b></span>: &nbsp;
+                        <span>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                                {{ info.address_ru|safe }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                                {{ info.address_en|safe }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                                {{ info.address_tk|safe }}
+                            {% endif %}
+                        </span>
+                        <br>
+                        <span><b>{% trans 'phone' %}</b></span>: &nbsp;
+                        <span>{{ info.phone }}</span>
+                        <br>
+                        <span><b>{% trans 'fax' %}</b></span>: &nbsp;
+                        <span>{{ info.fax }}</span>
+                        <br>
+                        <span><b>{% trans 'email' %}</b></span>: &nbsp;
+                        <span>{{ info.email }}</span>
+
+                        {% if info.email2 %}
+                        <br>
+                        <span><b>{% trans 'email' %}</b></span>: &nbsp;
+                        <span>{{ info.email2 }}</span>
+                        {% endif %}
+
+                        <!-- /.col-lg-5 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.quest -->
+    </section>
+    <!-- /.question -->
+
+{% endblock content %}

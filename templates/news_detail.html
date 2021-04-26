@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <a href="{% url 'main_page_link' %}" class="to_main_page">{% trans 'main_page' %}</a>
+            <h1>{% trans 'news' %}</h1>
+        </div>
+    </section>
+
+    <section class="last-news mt-4 mb-4">
+        <div class="lnews m-auto">
+            <h4>
+                {% if LANGUAGE_CODE == 'ru' %}
+                    {{ news.title_ru }}
+                {% elif LANGUAGE_CODE == 'en' %}
+                    {{ news.title_en }}
+                {% elif LANGUAGE_CODE == 'tk' %}
+                    {{ news.title_tk }}
+                {% endif %}
+            </h4>
+        </div>
+    </section>
+
+    <section class="tsse">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 tpp">
+                    <img src="{{ news.image.url }}" alt="" style="width: 20%; float: left; margin-right: 15px;">
+
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        {{ news.desc_ru|safe }}
+                    {% elif LANGUAGE_CODE == 'en' %}
+                        {{ news.desc_en|safe }}
+                    {% elif LANGUAGE_CODE == 'tk' %}
+                        {{ news.desc_tk|safe }}
+                    {% endif %}
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+{% endblock content %}

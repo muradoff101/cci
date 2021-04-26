@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <p>{% trans 'main_page' %}</p>
+            <h1>{% trans 'parcipant_events' %}</h1>
+        </div>
+    </section>
+
+    <section class="question" style="background: #fff!important;">
+        <div class="quest m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 quest2">
+{#                        <h1 style="margin-left: 0; margin-right: 0">{% trans 'membership_benefit' %}</h1>#}
+                        {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.0.desc_ru|safe }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.0.desc_en|safe }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.0.desc_tk|safe }}
+                        {% endif %}
+
+                        <!-- /.col-lg-5 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.quest -->
+    </section>
+    <!-- /.question -->
+{% endblock content %}

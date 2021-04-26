@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+<section class="news1 m-auto">
+    <div class="news-main1 m-auto">
+        <p>{% trans 'main_page' %}</p>
+        <h1>{% trans "Contacts" %}</h1>
+    </div>
+</section>
+
+<section class="contactus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 cont1">
+                <div class="c1">
+
+                    <p>
+                        {% trans 'address' %}
+                    </p>
+
+                    <h3>
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        {{ info.0.address_ru|safe }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                        {{ info.0.address_en|safe }}
+                        {% elif LANGUAGE_CODE == 'tk' %}
+                        {{ info.0.address_tk|safe }}
+                        {% endif %}
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 cont2">
+                <div class="row r1">
+                    <div class="col-lg-12 col-12 cnt1" style="padding-bottom:0px;">
+                        <h4>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.0.name_ru }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.0.name_en }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.0.name_tk }}
+                            {% endif %}
+                        </h4>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'phone' %}</p>
+
+                        <h3>{{ info.0.phone }}</h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'fax' %}</p>
+                        <h3>{{ info.0.faks }} </h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'email' %}</p>
+
+                        <h3>{{ info.0.email }}</h3>
+                    </div>
+                </div>
+
+                <div class="row r1">
+                    <div class="col-lg-12 col-12 cnt1" style="padding-bottom:0px;">
+                        <h4>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.0.name_ru1 }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.0.name_en1 }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.0.name_tk1 }}
+                            {% endif %}
+                        </h4>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'phone' %}</p>
+
+                        <h3>{{ info.0.phone2 }}</h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'fax' %}</p>
+                        <h3>{{ info.0.faks2 }} </h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'email' %}</p>
+
+                        <h3>{{ info.0.email2 }}</h3>
+                    </div>
+                </div>
+
+                <div class="row r1">
+                    <div class="col-lg-12 col-12 cnt1" style="padding-bottom:0px;">
+                        <h4>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ info.0.name_ru3 }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ info.0.name_en3 }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ info.0.name_tk3 }}
+                            {% endif %}
+                        </h4>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'phone' %}</p>
+
+                        <h3>{{ info.0.phone3 }}</h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'fax' %}</p>
+                        <h3>{{ info.0.faks3 }} </h3>
+                    </div>
+                    <div class="col-lg-6 cnt1">
+                        <p>{% trans 'email' %}</p>
+
+                        <h3>{{ info.0.email3 }}</h3>
+                    </div>
+                </div>
+
+                <div class="row r2">
+                    <div class="col-lg-6 cnt2">
+                        <p>{% trans 'website' %}</p>
+
+                        <h3>{{ info.0.website }}</h3>
+                    </div>
+                    {#                            <div class="col-lg-6 cnt2">#}
+                    {#                                <p>Soraglar</p>#}
+                    {#                            #}
+                    {#                                <h3>info@cci.gov.tm</h3>#}
+                    {#                            </div>#}
+                    {#                            <div class="col-lg-6 cnt2">#}
+                    {#                                <p>Soraglar</p>#}
+                    {#                            #}
+                    {#                                <h3>info@cci.gov.tm</h3>#}
+                    {#                            </div>#}
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+
+<div class="map" style="width: 100%">
+    <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac5c732217e7c088b2cd997bc68dfe6af30f2383d6556a4b6d9d38d7647eb0a41&amp;source=constructor"
+        width="100%" height="400" frameborder="0"></iframe>
+</div>
+
+{% endblock content %}

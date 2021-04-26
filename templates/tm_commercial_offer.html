@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+<section class="news1 m-auto">
+    <div class="news-main1 m-auto">
+        <a href="{% url 'main_page_link' %}" class="to_main_page">{% trans 'main_page' %}</a>
+        <h1>{% trans 'tm_producer_commer_offer' %}</h1>
+    </div>
+</section>
+
+<section class="blocks " style="background: none!important;">
+
+
+    {% if offers %}
+    {% for offer in offers %}
+    <div class="b3 m-auto">
+        <div class="adv ">
+            <div class="container">
+                <div class="row">
+                    {#                                <div class="col-lg-2 col-sm-2 s1 ">#}
+                    {#                                    <img src="{{ tender.main_image.url }}" alt="">#}
+                    {#                                </div>#}
+                    <!-- /.col-lg-2 -->
+                    <div class="col-lg-2 col-sm-5 align-middle">
+                        <img src="{% if offer.main_image %}{{offer.main_image.url}}{% endif %}" alt=""
+                            style="width: 100%;" class="align-middle">
+                    </div>
+                    <div class="col-lg-5 col-sm-7  s2">
+                        <h3>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            №{{ offer.offer_num }} {{ offer.name_ru }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            №{{ offer.offer_num }} {{ offer.name_en }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            №{{ offer.offer_num }} {{ offer.name_tk }}
+                            {% endif %}
+                        </h3>
+                        <p class="p1">
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ offer.desc_ru|safe }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ offer.desc_en|safe }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ offer.desc_tk|safe }}
+                            {% endif %}
+                        </p>
+
+                        {#                                    <p class="p2">{% trans 'installer' %}</p>#}
+
+
+                    </div>
+                    <!-- /.col-lg-6 -->
+
+                    <div class="col-lg-3 offset-lg-2 col-sm-3 s3">
+                        <a href="#">
+                            <h5>{{ offer.year }}</h5>
+
+                            <!-- <p><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Kalendara bellemek</p> -->
+                        </a>
+                    </div>
+                    <!-- /.col-lg-1 -->
+
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    <!-- /.adv  /.banner -->
+
+</section>
+
+{% endblock content %}

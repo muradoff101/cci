@@ -1,0 +1,393 @@
+{% load static %}
+{% load i18n %}
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="yandex-verification" content="3293d0c0b9b4b984" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'font/css/font-awesome.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
+    <link rel="stylesheet" href="{% static 'owlcarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'owlcarousel/assets/owl.theme.default.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+
+    <title>{{title}}</title>
+
+    <script src="//code.jivosite.com/widget/A1kOdRiXYs" async></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="top-header m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 top-1">
+                        <p>{% trans "Habarlashmak" %}: (+99312) 39 89 81</p>
+                        
+                    </div>
+                    <!-- /.col-lg-3 -->
+
+                    <div class="col-md-7 col-lg-7 ml-auto top-2 ">
+                        <p>
+                            {#                            <a href="{% url 'aboutus_page_link' %}">{% trans "About" %}</a> <span>|</span>#}
+                            {#                        <a href="news.html"> {% trans "Press" %} </a><span>|</span>#}
+                            {#                        <a href="{% url 'faq_page_link' %}"> {% trans "Faq" %}</a> <span>|</span>#}
+                            <a href="{% url 'contacts_page_link' %}"> {% trans "Contacts" %} </a> <span>|</span>
+                            <span style="font-size: 13px;padding-left: 0px!important;"> {% trans 'select_lang' %}:
+                            </span>
+                            <a href="/tk{{ request.path|slice:'3:' }}"><img src="{% static 'img/tm.png' %}" class="flag" alt="tk"></a>
+                            <a href="/en{{ request.path|slice:'3:'  }}"><img src="{% static 'img/en.png' %}" class="flag" alt="en"></a>
+                            <a href="/ru{{ request.path|slice:'3:'  }}"><img src="{% static 'img/ru.png' %}" class="flag" alt="ru"></a>
+                        </p>
+
+
+                    </div>
+                    <!-- /.col-lg-7 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.top-header -->
+
+        <div class="header ">
+            <nav class="navbar navbar-expand-lg navbar-light m-auto ">
+
+                <a class="navbar-brand" href="{% url 'main_page_link' %}">
+                    <img src="{% static 'img/logo.png' %}" alt=""> <span class="word" style="text-transform: uppercase">
+                        {% trans 'tpp' %}</span>
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                {% csrf_token %}
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        {#                    <li class="nav-item active">#}
+                        {#                        <a class="nav-link" href="exhibition_list.html"> SERGILERIŇ SANAWY </a> <span#}
+                        {#                            class="sr-only">(current)</span></a>#}
+                        {#                    </li>#}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans "About" %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item"
+                                    href="{% url 'address_page_link' %}">{% trans 'addresses' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'aboutus_page_link' %}">{% trans 'about_activity' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'services_page_link' %}">{% trans 'services' %}</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans 'membership' %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item"
+                                    href="{% url 'benefits_page_link' %}">{% trans 'membership_benefit' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'membership_joining_page_link' %}">{% trans 'membership_joining' %}</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans 'business_info' %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'tenders_page_link' %}">{% trans 'tenders' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'partners_registry_page_link' %}">{% trans 'partners_reestr' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'turkmen_offer_page_link' %}">{% trans 'tm_producer_commer_offer' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'abroad_offer_page_link' %}">{% trans 'forign_produc_commer_offer' %}</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans 'invetsment_activity' %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                {% comment %} <a class="dropdown-item"
+                                    href="{% url 'investment_projects_page_link' %}">{% trans 'invetsment_projects' %}</a> {% endcomment %}
+                                <a class="dropdown-item"
+                                    href="{% url 'investment_recipient_page_link' %}">{% trans 'question_invetstm_applicant' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'investment_questionare_page_link' %}">{% trans 'investor_quest' %}</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans 'exhibitions' %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item"
+                                    href="{% url 'exhibitions_page_link' %}">{% trans 'tm_exhibitions' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'foreign_exhibitions_page_link' %}">{% trans 'abroad_exhibitions' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'parcipant_events_page_link' %}">{% trans 'parcipant_events' %}</a>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">{% trans 'cci_enterprises' %}</a>
+                            <div class="dropdown-menu header_dropdown_menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 1 %}">{% trans 'bn_tpp' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 4 %}">{% trans 'dz_tpp' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 3 %}">{% trans 'lb_tpp' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 2 %}">{% trans 'mr_tpp' %}</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 5 %}">«{% trans 'turkmenekspertiza' %}»</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 6 %}">«{% trans 'turkmenbashiekspertiza' %}»</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 8 %}">«{% trans 'torg_dom' %}»</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'branches_page_link' 7 %}">«{% trans 'turkmenterjime' %}»</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'conferences_page_link' %}">{% trans 'conferences' %}</a>
+                        </li>
+
+                        {#                         <li class="nav-item">#}
+                        {#                           #}
+                        {#                        </li>#}
+
+                        {#                    <li class="nav-item">#}
+                        {#                        <a class="nav-link" href="#">MYHMANLARA</a>#}
+                        {#                    </li>#}
+                        {##}
+                        {#                    <li class="nav-item">#}
+                        {#                        <a class="nav-link nav1" href="#">GATNAŞYJYLARA</a>#}
+                        {#                    </li>#}
+
+
+                        {#                    <form class="form-inline my-2 my-lg-0">#}
+                        {#                        <button class="btn btn-outline-success my-2 my-sm-0 bt1" type="submit"><i#}
+                        {#                                class="fa fa-search" aria-hidden="true"></i></button>#}
+                        {#                        <button class="btn btn-outline-success my-2 my-sm-0 bt2" type="submit"><i#}
+                        {#                                class="fa fa-search" aria-hidden="true"></i>#}
+                        {#                            <span>Gözleg</span></button>#}
+                        {##}
+                        {#                    </form>#}
+                        {##}
+                        {#                    <li class="nav-item nav2">#}
+                        {#                        <a class="nav-link giris" href="#"> <i class="fa fa-user user" aria-hidden="true"> </i>GIRIŞ#}
+                        {#                        </a>#}
+                        {#                    </li>#}
+                    </ul>
+                    {#                <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+                    {##}
+                    {#                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"#}
+                    {#                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">#}
+                    {#                        <span class="navbar-toggler-icon"></span>#}
+                    {#                    </button>#}
+                    {##}
+                    {#                    <div class="collapse navbar-collapse" id="navbarNavDropdown">#}
+                    {#                        <ul class="navbar-nav">#}
+                    {##}
+                    {#                            <li class="nav-item active">#}
+                    {#                                <a class="nav-link" href="#">Главная</a>#}
+                    {#                            </li>#}
+                    {##}
+                    {#                            <li class="nav-item">#}
+                    {#                                <a class="nav-link" href="#">Один</a>#}
+                    {#                            </li>#}
+                    {##}
+                    {#                            <li class="nav-item">#}
+                    {#                                <a class="nav-link" href="#">Два</a>#}
+                    {#                            </li>#}
+                    {##}
+                    {#                            <li class="nav-item dropdown">#}
+                    {#                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"#}
+                    {#                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Три</a>#}
+                    {#                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">#}
+                    {#                                    <a class="dropdown-item" href="#">Три один</a>#}
+                    {#                                    <a class="dropdown-item" href="#">Три два</a>#}
+                    {#                                    <a class="dropdown-item" href="#">Три три</a>#}
+                    {#                                </div>#}
+                    {#                            </li>#}
+                    {##}
+                    {#                        </ul>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                </nav>#}
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    {% block content %}
+    {% endblock content %}
+
+    <section class="footer-cont m-auto">
+        <div class="footer-main m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6  mail">
+                        {#                            <a href="#">#}
+                        {#                                <i class="fa fa-envelope "></i>#}
+                        {#                                <div class="text">#}
+                        {#                                    <h2>{% trans 'be_member' %}</h2>#}
+                        {#                                    <p>{% trans 'send_all_news_to_mail' %}</p>#}
+                        {#                                </div>#}
+                        {#                            </a>#}
+                        &nbsp;
+                    </div>
+                    <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 col-sm-6 footer-search">
+                        {#                            <form class="form-inline my-2 my-lg-0" id="subscribe_form">#}
+                        {#                                <input class="form-control mr-sm-2" type="email" placeholder="{% trans 'your_email' %}"#}
+                        {#                                       aria-label="Search">#}
+                        {#                                <button class="btn btn-outline-success my-2 my-sm-0"#}
+                        {#                                        type="submit">{% trans 'subscribe' %}</button>#}
+                        {#                            </form>#}
+                        &nbsp;
+                        <br>
+                        &nbsp;
+                    </div>
+                    <!-- /.col-md-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-bottom ">
+        <div class="footer-bot m-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <h4>{% trans 'tpp' %}</h4>
+                        {#                    TÜRKMENISTANYŇ <br>SÖWDA-SENAGAT EDARASY#}
+                    </div>
+                    <div class="col-lg-6 col-md-6 footer-media">
+                        <p><a href="{% url 'aboutus_page_link' %}">{% trans "About" %}</a> <span>|</span>
+                            {#                        <a href="#"> {% trans "Press" %} </a><span>|</span>#}
+                            {#                        <a href="{% url 'faq_page_link' %}"> {% trans "Faq" %}</a> <span>|</span>#}
+                            <a href="{% url 'contacts_page_link' %}"> {% trans "Contacts" %} </a>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        </div>
+        <!-- /.footer-bot -->
+    </section>
+
+    <section class="last-footer">
+        <div class="l-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 lf1">
+                        <p>2021 {% trans 'year' %}. {% trans 'all_rights' %}</p>
+                    </div>
+
+                    <div class="col-lg-1 col-sm-4">
+                        <p>{{ tpp_info.0.email }}</p>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 text-center">
+                        <p>{{ tpp_info.0.phone }}</p>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-4">
+                        <p>
+                            {% if LANGUAGE_CODE == 'ru' %}
+                            {{ tpp_info.0.address_ru }}
+                            {% elif LANGUAGE_CODE == 'en' %}
+                            {{ tpp_info.0.address_en }}
+                            {% elif LANGUAGE_CODE == 'tk' %}
+                            {{ tpp_info.0.address_tk }}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+            <div class="ftp">
+                <img src="{% static 'img/ftp.png' %}" alt="">
+            </div>
+        </div>
+        <!-- /.l-footer -->
+
+
+    </section>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                {#                <div class="modal-header">#}
+                {#                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>#}
+                {#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+                {#                        <span aria-hidden="true">&times;</span>#}
+                {#                    </button>#}
+                {#                </div>#}
+                <div class="modal-body">
+                    <img src="" alt="Image" class="modal_image" style="width: 100%">
+                </div>
+                {#                <div class="modal-footer">#}
+                {#                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+                {#                    <button type="button" class="btn btn-primary">Save changes</button>#}
+                {#                </div>#}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="js/jquery-1.11.0.min.js"></script> -->
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <!-- <script src="slick/slick.min.js"></script> -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>
+{% endspaceless %}

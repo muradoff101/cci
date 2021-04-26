@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+{% block content %}
+
+    <section class="news1 m-auto">
+        <div class="news-main1 m-auto">
+            <a href="{% url 'main_page_link' %}" class="to_main_page">{% trans 'main_page' %}</a>
+            <h1>{% trans 'news' %}</h1>
+        </div>
+    </section>
+
+    <section class="last-news">
+        <div class="lnews m-auto">
+            <h1>{% trans 'last_news' %}</h1>
+
+        </div>
+    </section>
+
+    <section class="main-photo">
+        <div class="m-photo">
+            <div class="container ">
+                <div class="row">
+
+                    {% for new in news %}
+                        <div class="col-md-4 col-xl-4 m1-photo text-center mb-4">
+                            <div class="scale">
+                                <a href="{% url 'news_detail_page_link' new.pk %}">
+                                    <div>
+                                        <img src="{{ new.image.url }}" style="max-height:375px" class="scale img-fluid"
+                                             alt="">
+                                    </div>
+                                    <p>
+                                        {% if LANGUAGE_CODE == 'ru' %}
+                                            {{ new.title_ru|truncatechars:50|safe }}
+                                        {% elif LANGUAGE_CODE == 'en' %}
+                                            {{ new.title_en|truncatechars:50|safe }}
+                                        {% elif LANGUAGE_CODE == 'tk' %}
+                                            {{ new.title_tk|truncatechars:50|safe }}
+                                        {% endif %}
+                                    </p>
+                                    <span>{{ new.date|date:"d.m.Y" }}</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+    </section>
+
+{% endblock content %}
